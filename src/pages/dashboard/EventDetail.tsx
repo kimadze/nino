@@ -78,7 +78,7 @@ const EventDetail = () => {
         </TabsList>
 
         <TabsContent value="branding" className="mt-5 space-y-5">
-          <div className="bg-card rounded-xl p-5 sm:p-6 space-y-4">
+          <div className="bg-card rounded-2xl p-5 sm:p-7 space-y-4">
             <h3 className="font-display font-semibold">ბრენდის გაფორმება</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="space-y-2">
@@ -120,7 +120,7 @@ const EventDetail = () => {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
-            <div className="bg-card rounded-xl p-5 sm:p-6">
+            <div className="bg-card rounded-2xl p-5 sm:p-7">
               <Label className="mb-3 block">პრივიუ</Label>
               <div className="flex justify-center">
                 <TemplatePreview
@@ -145,7 +145,7 @@ const EventDetail = () => {
 
         <TabsContent value="form" className="mt-5">
           <div className="grid lg:grid-cols-2 gap-5">
-            <div className="bg-card rounded-xl p-5 sm:p-6 space-y-4">
+            <div className="bg-card rounded-2xl p-5 sm:p-7 space-y-4">
               <h3 className="font-display font-semibold">ფორმის ველები</h3>
               {formFields?.map((field) => (
                 <div key={field.id} className="flex items-center justify-between p-3 rounded-xl bg-muted/50">
@@ -175,9 +175,9 @@ const EventDetail = () => {
                 <Button variant="outline" onClick={handleAddField} className="rounded-full">დამატება</Button>
               </div>
             </div>
-            <div className="bg-muted/30 rounded-xl p-5 sm:p-6">
+            <div className="bg-muted/30 rounded-2xl p-5 sm:p-7">
               <h3 className="font-display font-semibold mb-4">პრივიუ</h3>
-              <div className="bg-card rounded-xl p-4 sm:p-6 space-y-4">
+              <div className="bg-card rounded-2xl p-4 sm:p-6 space-y-4">
                 <h4 className="text-lg font-semibold">{event.name}</h4>
                 <p className="text-sm text-muted-foreground">{event.description || "აღწერა არ არის"}</p>
                 {formFields?.map((f) => (
@@ -193,7 +193,7 @@ const EventDetail = () => {
         </TabsContent>
 
         <TabsContent value="settings" className="mt-5">
-          <div className="bg-card rounded-xl p-5 sm:p-6 space-y-4">
+          <div className="bg-card rounded-2xl p-5 sm:p-7 space-y-4">
             <h3 className="font-display font-semibold">ღონისძიების პარამეტრები</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="space-y-2">

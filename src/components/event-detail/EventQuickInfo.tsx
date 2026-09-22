@@ -47,7 +47,7 @@ export default function EventQuickInfo({ event, onUpdate }: Props) {
   };
 
   return (
-    <div className="bg-card rounded-xl p-4 sm:p-6">
+    <div className="bg-card rounded-2xl p-4 sm:p-7">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
         {/* Left column: Event Image */}
         <div className="space-y-2">

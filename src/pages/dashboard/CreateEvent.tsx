@@ -285,29 +285,29 @@ const CreateEvent = () => {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-          className="text-center space-y-6"
+          className="lux-card text-center space-y-6 p-7 sm:p-10"
         >
           <div className="w-20 h-20 rounded-full bg-primary flex items-center justify-center mx-auto">
             <PartyPopper className="w-10 h-10 text-primary-foreground" />
           </div>
           <div>
-            <h1 className="text-3xl font-display font-bold mb-2">Your event is live! 🎉</h1>
+            <h1 className="text-3xl font-display font-bold mb-2">ღონისძიება გამოქვეყნებულია</h1>
             <p className="text-muted-foreground text-lg">
-              <span className="font-semibold text-foreground">{name}</span> is ready to accept registrations.
+              <span className="font-semibold text-foreground">{name}</span> მზადაა რეგისტრაციების მისაღებად.
             </p>
           </div>
 
           <Card className="text-left">
             <CardContent className="p-5 space-y-4">
               <div>
-                <Label className="text-xs text-muted-foreground uppercase tracking-wide">Registration Link</Label>
+                <Label className="text-xs text-muted-foreground uppercase tracking-wide">რეგისტრაციის ბმული</Label>
                 <div className="flex items-center gap-2 mt-1.5">
                   <Input value={regUrl} readOnly className="text-sm bg-muted/50" />
                   <Button
                     variant="outline"
                     size="icon"
                     className="shrink-0"
-                    onClick={() => { navigator.clipboard.writeText(regUrl); toast.success("Link copied!"); }}
+                    onClick={() => { navigator.clipboard.writeText(regUrl); toast.success("ბმული დაკოპირდა"); }}
                   >
                     <Copy className="w-4 h-4" />
                   </Button>
@@ -337,17 +337,17 @@ const CreateEvent = () => {
 
           <div className="flex flex-col sm:flex-row gap-3 justify-center pt-2">
             <Button className="bg-primary" onClick={() => navigate(`/dashboard/events/${createdEventId}`)}>
-              <Eye className="w-4 h-4 mr-2" /> View Event Dashboard
+              <Eye className="w-4 h-4 mr-2" /> ღონისძიების მართვა
             </Button>
             <Button variant="outline" asChild>
               <a href={regUrl} target="_blank" rel="noopener noreferrer">
-                <ExternalLink className="w-4 h-4 mr-2" /> Preview Registration Page
+                <ExternalLink className="w-4 h-4 mr-2" /> რეგისტრაციის გვერდი
               </a>
             </Button>
           </div>
 
           <Button variant="ghost" className="text-muted-foreground" onClick={() => navigate("/dashboard/events")}>
-            ← Back to all events
+            ← ყველა ღონისძიება
           </Button>
         </motion.div>
       </div>
@@ -363,15 +363,16 @@ const CreateEvent = () => {
   return (
     <div className="max-w-3xl mx-auto space-y-6">
       {/* Back button */}
-      <Button variant="ghost" className="mb-0" onClick={() => navigate(isEditMode ? `/dashboard/events/${editId}` : "/dashboard/events")}>
-        <ArrowLeft className="w-4 h-4 mr-2" /> {isEditMode ? "Back to Event" : "Back to Events"}
+      <Button variant="ghost" className="mb-0 rounded-full" onClick={() => navigate(isEditMode ? `/dashboard/events/${editId}` : "/dashboard/events")}>
+        <ArrowLeft className="w-4 h-4 mr-2" /> {isEditMode ? "ღონისძიებაზე დაბრუნება" : "ღონისძიებებზე დაბრუნება"}
       </Button>
 
       {/* Header */}
-      <div>
-        <h1 className="text-3xl font-display font-bold">{isEditMode ? "Edit Event" : "Create Your Event"}</h1>
+      <div className="border-b border-border pb-7">
+        <p className="eyebrow mb-2">{isEditMode ? "რედაქტირება" : "ახალი ღონისძიება"}</p>
+        <h1 className="text-3xl font-display font-bold">{isEditMode ? "ღონისძიების რედაქტირება" : "შექმენით ღონისძიება"}</h1>
         <p className="text-muted-foreground mt-1">
-          {isEditMode ? "Update your event details, template, and form fields." : "Three quick steps and you're live. Let's get started."}
+          {isEditMode ? "განაახლეთ დეტალები, შაბლონი და ფორმის ველები." : "სამი მარტივი ნაბიჯი და ღონისძიება მზად იქნება."}
         </p>
       </div>
 

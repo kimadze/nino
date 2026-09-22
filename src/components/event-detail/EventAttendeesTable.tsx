@@ -121,7 +121,7 @@ export default function EventAttendeesTable({ eventId }: { eventId: string }) {
         <div className="flex justify-center py-12"><Loader2 className="w-5 h-5 animate-spin text-primary" /></div>
       ) : paged.length > 0 ? (
         <>
-          <div className="rounded-xl overflow-x-auto">
+          <div className="rounded-2xl border border-border bg-card overflow-x-auto">
             <Table>
               <TableHeader>
                 <TableRow className="bg-muted/50">

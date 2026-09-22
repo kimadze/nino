@@ -124,10 +124,11 @@ const Attendees = () => {
 
   return (
     <div className="space-y-8">
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+      <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4 border-b border-border pb-8">
         <div>
+          <p className="eyebrow mb-2">სტუმრების ბაზა</p>
           <h1 className="text-3xl font-display font-bold">სტუმრები</h1>
-          <p className="text-muted-foreground">მართე და გადმოწერე სტუმრების მონაცემები.</p>
+          <p className="mt-2 text-muted-foreground">მართე და გადმოწერე სტუმრების მონაცემები.</p>
         </div>
         <Button variant="outline" size="sm" className="w-full sm:w-auto rounded-full bg-card" onClick={handleExportCSV}>
           <Download className="w-4 h-4 mr-2" /> CSV-ის ექსპორტი
@@ -142,7 +143,7 @@ const Attendees = () => {
             { label: "შემოსული", value: stats.registrations?.filter(r => r.status === "checked_in").length ?? 0 },
             { label: "აქტიური ღონისძიებები", value: stats.activeEvents ?? 0 },
           ].map((s) => (
-            <div key={s.label} className="bg-card rounded-xl p-5">
+            <div key={s.label} className="bg-card rounded-2xl p-6">
               <p className="text-sm text-muted-foreground">{s.label}</p>
               <p className="text-2xl font-display font-bold mt-1">{s.value}</p>
             </div>
@@ -173,7 +174,7 @@ const Attendees = () => {
         <div className="flex justify-center py-20"><Loader2 className="w-6 h-6 animate-spin text-primary" /></div>
       ) : paged.length > 0 ? (
         <>
-          <div className="bg-card rounded-xl overflow-x-auto">
+          <div className="bg-card rounded-2xl overflow-x-auto">
             <Table>
               <TableHeader>
                 <TableRow className="hover:bg-transparent">

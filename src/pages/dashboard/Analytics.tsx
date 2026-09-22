@@ -43,14 +43,15 @@ const Analytics = () => {
 
   return (
     <div className="space-y-8">
-      <div>
+      <div className="border-b border-border pb-8">
+        <p className="eyebrow mb-2">შედეგები</p>
         <h1 className="text-3xl font-display font-bold">ანალიტიკა</h1>
-        <p className="text-muted-foreground">თვალი ადევნე ღონისძიებების შედეგებს და რეგისტრაციის მაჩვენებლებს.</p>
+        <p className="mt-2 text-muted-foreground">თვალი ადევნე ღონისძიებების შედეგებს და რეგისტრაციის მაჩვენებლებს.</p>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         {statCards.map((stat) => (
-          <div key={stat.label} className="bg-card rounded-xl p-5">
+          <div key={stat.label} className="bg-card rounded-2xl p-6">
             <div className="flex items-center justify-between mb-3">
               <span className="text-sm text-muted-foreground">{stat.label}</span>
               <div className="w-9 h-9 rounded-xl bg-muted flex items-center justify-center">
@@ -63,7 +64,7 @@ const Analytics = () => {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
-        <div className="bg-card rounded-xl p-5 sm:p-6">
+        <div className="bg-card rounded-2xl p-5 sm:p-7">
           <h3 className="font-display font-semibold mb-4">რეგისტრაციები ღონისძიებების მიხედვით</h3>
           {perEventData.length > 0 ? (
             <div className="h-72">
@@ -85,7 +86,7 @@ const Analytics = () => {
           )}
         </div>
 
-        <div className="bg-card rounded-xl p-5 sm:p-6">
+        <div className="bg-card rounded-2xl p-5 sm:p-7">
           <h3 className="font-display font-semibold mb-4">რეგისტრაციები დროში</h3>
           {overTimeData.length > 0 ? (
             <div className="h-72">

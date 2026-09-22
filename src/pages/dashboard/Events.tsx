@@ -42,16 +42,16 @@ const Events = () => {
 
     return (
       <div
-        className="group cursor-pointer"
+        className="group cursor-pointer rounded-2xl border border-border/80 bg-card p-3 shadow-[0_20px_50px_-45px_rgba(35,31,24,.55)] transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:shadow-[0_22px_60px_-38px_rgba(35,31,24,.35)]"
         onClick={() => navigate(`/dashboard/events/${event.id}`)}
       >
         {/* Image */}
-        <div className="relative aspect-[16/10] rounded-xl overflow-hidden bg-muted mb-3">
+        <div className="relative aspect-[16/10] rounded-xl overflow-hidden bg-muted mb-4">
           {event.background_image_url ? (
             <img
               src={event.background_image_url}
               alt={event.name}
-              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+              className="w-full h-full object-cover saturate-[.75] transition duration-500 group-hover:scale-105 group-hover:saturate-100"
             />
           ) : (
             <div className="w-full h-full flex items-center justify-center">
@@ -101,12 +101,13 @@ const Events = () => {
 
   return (
     <div className="space-y-8">
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+      <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-5 border-b border-border pb-8">
         <div>
-          <h1 className="text-3xl font-display font-bold">ღონისძიებები</h1>
-          <p className="text-muted-foreground">შექმენი და მართე ღონისძიებების რეგისტრაციის გვერდები.</p>
+          <p className="eyebrow mb-2">MIX HALL · მართვის სივრცე</p>
+          <h1 className="text-3xl font-display font-bold sm:text-4xl">ღონისძიებები</h1>
+          <p className="mt-2 text-muted-foreground">შექმენი და მართე ღონისძიებების რეგისტრაციის გვერდები.</p>
         </div>
-        <Button className="w-full sm:w-auto" asChild>
+        <Button className="w-full sm:w-auto rounded-full bg-foreground px-6 text-background hover:bg-primary hover:text-primary-foreground" asChild>
           <Link to="/dashboard/events/create">
             <Plus className="w-4 h-4 mr-2" /> ახალი ღონისძიება
           </Link>
@@ -116,7 +117,7 @@ const Events = () => {
       {/* Upcoming Events Row */}
       {upcoming && upcoming.length > 0 && (
         <div>
-          <h2 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-4">მოახლოებული</h2>
+          <h2 className="mb-4 text-xs font-bold uppercase tracking-[.2em] text-muted-foreground">მოახლოებული</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {upcoming.map((event) => (
               <EventCard key={event.id} event={event} variant="upcoming" />
@@ -129,10 +130,10 @@ const Events = () => {
       <div className="flex flex-col sm:flex-row gap-3 items-start sm:items-center">
         <div className="relative max-w-sm flex-1">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-          <Input placeholder="ძიება ღონისძიებებში…" className="pl-10 rounded-full" value={search} onChange={e => setSearch(e.target.value)} />
+          <Input placeholder="ძიება ღონისძიებებში…" className="h-11 pl-10 rounded-full bg-card" value={search} onChange={e => setSearch(e.target.value)} />
         </div>
         <Select value={statusFilter} onValueChange={setStatusFilter}>
-          <SelectTrigger className="w-36 rounded-full">
+          <SelectTrigger className="h-11 w-40 rounded-full bg-card">
             <SelectValue placeholder="სტატუსი" />
           </SelectTrigger>
           <SelectContent>
@@ -226,11 +227,13 @@ const Events = () => {
           </div>
         )
       ) : (
-        <div className="text-center py-20">
-          <CalendarDays className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
+        <div className="lux-card text-center py-20 px-6">
+          <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-muted">
+            <CalendarDays className="w-6 h-6 text-primary" />
+          </div>
           <h3 className="text-lg font-semibold mb-2">ჯერ ღონისძიებები არ არის</h3>
           <p className="text-muted-foreground mb-4">შექმენი შენი პირველი ღონისძიება და დაიწყე.</p>
-          <Button asChild>
+          <Button className="rounded-full bg-foreground text-background hover:bg-primary hover:text-primary-foreground" asChild>
             <Link to="/dashboard/events/create"><Plus className="w-4 h-4 mr-2" /> ახალი ღონისძიება</Link>
           </Button>
         </div>

@@ -53,19 +53,20 @@ const Integrations = () => {
 
   return (
     <div className="space-y-8">
-      <div>
+      <div className="border-b border-border pb-8">
+        <p className="eyebrow mb-2">ავტომატიზაცია</p>
         <h1 className="text-3xl font-display font-bold">ინტეგრაციები</h1>
-        <p className="text-muted-foreground">დააკავშირე საყვარელი ხელსაწყოები და ავტომატიზაცია მოახდინე სამუშაო პროცესისა.</p>
+        <p className="mt-2 text-muted-foreground">დააკავშირე საჭირო ხელსაწყოები და გაამარტივე სამუშაო პროცესი.</p>
       </div>
 
       {sortedCategories.map((category) => (
         <div key={category}>
           <h2 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-3">{category}</h2>
-          <div className="rounded-xl divide-y divide-muted">
+          <div className="divide-y divide-border overflow-hidden rounded-2xl border border-border bg-card">
             {grouped[category].map((c) => (
               <div
                 key={c.id}
-                className="flex items-center gap-4 px-5 py-4 hover:bg-muted/50 transition-colors first:rounded-t-xl last:rounded-b-xl"
+                className="flex items-center gap-4 px-5 py-4 hover:bg-muted/50 transition-colors"
               >
                 <div className="w-10 h-10 rounded-xl bg-muted flex items-center justify-center flex-shrink-0">
                   <c.icon className="w-5 h-5 text-muted-foreground" />

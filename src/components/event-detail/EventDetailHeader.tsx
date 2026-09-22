@@ -29,7 +29,7 @@ export default function EventDetailHeader({ event, onStatusChange }: Props) {
   };
 
   return (
-    <div className="flex items-start justify-between gap-3">
+    <div className="flex items-start justify-between gap-3 border-b border-border pb-7">
       {/* Left: Back + Title */}
       <div className="flex items-start gap-3 min-w-0">
         <Button variant="ghost" size="icon" className="shrink-0 mt-0.5" onClick={() => navigate("/dashboard/events")}>

@@ -32,7 +32,7 @@ export default function EventQRCode({ registrationUrl, eventName }: Props) {
   };
 
   return (
-    <div className="bg-card rounded-xl p-4 sm:p-6">
+    <div className="bg-card rounded-2xl p-4 sm:p-7">
       <Label className="mb-3 block font-display font-semibold">QR კოდი</Label>
       <p className="text-xs text-muted-foreground mb-4">
         გაუზიარე QR კოდი სტუმრებს, რათა მარტივად გადავიდნენ რეგისტრაციის გვერდზე.

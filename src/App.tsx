@@ -1,79 +1,47 @@
-import { useEffect } from "react";
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
-import { ThemeProvider } from "next-themes";
-import { AuthProvider } from "@/contexts/AuthContext";
-import { ProtectedRoute } from "@/components/ProtectedRoute";
-import { DashboardLayout } from "@/components/layout/DashboardLayout";
+import { lazy, Suspense } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Logo } from "@/components/Logo";
+import Landing from "@/pages/Landing";
 
-import Landing from "./pages/Landing";
-import Auth from "./pages/Auth";
-import Register from "./pages/Register";
-import CompanyPage from "./pages/CompanyPage";
-import Events from "./pages/dashboard/Events";
-import CreateEvent from "./pages/dashboard/CreateEvent";
-import EventDetail from "./pages/dashboard/EventDetail";
-import Attendees from "./pages/dashboard/Attendees";
-import Analytics from "./pages/dashboard/Analytics";
-import Integrations from "./pages/dashboard/Integrations";
-import SettingsPage from "./pages/dashboard/SettingsPage";
-import NotFound from "./pages/NotFound";
-
-const queryClient = new QueryClient();
-
-function ScrollToTop() {
-  const { pathname } = useLocation();
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
-  return null;
-}
-
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false} storageKey="app-theme">
-      <AuthProvider>
-        <TooltipProvider>
-          <Toaster />
-          <Sonner />
-          <BrowserRouter>
-            <ScrollToTop />
-            <Routes>
-              {/* Public */}
-              <Route path="/" element={<Landing />} />
-              <Route path="/auth" element={<Auth />} />
-              <Route path="/register/:slug" element={<Register />} />
-              <Route path="/company/:companySlug" element={<CompanyPage />} />
-
-              {/* Dashboard (protected) */}
-              <Route path="/dashboard" element={<Navigate to="/dashboard/events" replace />} />
-              <Route path="/dashboard/*" element={
-                <ProtectedRoute>
-                  <DashboardLayout>
-                    <Routes>
-                      <Route path="events" element={<Events />} />
-                      <Route path="events/create" element={<CreateEvent />} />
-                      <Route path="events/:id" element={<EventDetail />} />
-                      <Route path="events/:id/edit" element={<CreateEvent />} />
-                      <Route path="attendees" element={<Attendees />} />
-                      <Route path="analytics" element={<Analytics />} />
-                      <Route path="integrations" element={<Integrations />} />
-                      <Route path="settings" element={<SettingsPage />} />
-                    </Routes>
-                  </DashboardLayout>
-                </ProtectedRoute>
-              } />
-
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </BrowserRouter>
-        </TooltipProvider>
-      </AuthProvider>
-    </ThemeProvider>
-  </QueryClientProvider>
+const BackendApp = lazy(() => import("@/BackendApp"));
+const backendConfigured = Boolean(
+  import.meta.env.VITE_SUPABASE_URL && import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY,
 );
 
-export default App;
+function SetupState() {
+  return (
+    <div className="flex min-h-screen items-center justify-center bg-background px-5 py-12">
+      <div className="lux-card w-full max-w-xl p-8 text-center sm:p-12">
+        <Logo size="lg" className="mx-auto" />
+        <p className="eyebrow mt-8">სისტემის დაკავშირება</p>
+        <h1 className="mt-4 text-3xl font-bold sm:text-4xl">მართვის სივრცე თითქმის მზადაა</h1>
+        <p className="mx-auto mt-5 max-w-md leading-8 text-muted-foreground">
+          Dashboard-ის გასააქტიურებლად v0 ან Vercel პროექტში დაამატეთ
+          Supabase-ის გარემოს ცვლადები.
+        </p>
+        <a href="/" className="mt-8 inline-flex rounded-full bg-foreground px-6 py-3 font-bold text-background hover:bg-primary hover:text-primary-foreground">
+          მთავარ გვერდზე დაბრუნება
+        </a>
+      </div>
+    </div>
+  );
+}
+
+export default function App() {
+  if (backendConfigured) {
+    return (
+      <Suspense fallback={<div className="min-h-screen bg-background" />}>
+        <BackendApp />
+      </Suspense>
+    );
+  }
+
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Landing />} />
+        <Route path="*" element={<SetupState />} />
+      </Routes>
+    </BrowserRouter>
+  );
+}

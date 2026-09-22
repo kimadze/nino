@@ -92,9 +92,10 @@ const SettingsPage = () => {
 
   return (
     <div className="space-y-8 max-w-3xl mx-auto">
-      <div>
+      <div className="border-b border-border pb-8">
+        <p className="eyebrow mb-2">ანგარიში</p>
         <h1 className="text-3xl font-display font-bold">პარამეტრები</h1>
-        <p className="text-muted-foreground">მართე შენი ანგარიში და პრეფერენციები.</p>
+        <p className="mt-2 text-muted-foreground">მართე შენი ანგარიში და პრეფერენციები.</p>
       </div>
 
       <Tabs defaultValue="profile">
@@ -105,7 +106,7 @@ const SettingsPage = () => {
         </TabsList>
 
         <TabsContent value="profile" className="mt-6">
-          <div className="bg-card rounded-xl p-6 space-y-5">
+          <div className="bg-card rounded-2xl p-6 sm:p-8 space-y-5">
             <div className="grid sm:grid-cols-2 gap-4">
               <div className="space-y-2">
                 <Label>სახელი და გვარი</Label>
@@ -203,7 +204,7 @@ const SettingsPage = () => {
         </TabsContent>
 
         <TabsContent value="appearance" className="mt-6">
-          <div className="bg-card rounded-xl p-6 space-y-6">
+          <div className="bg-card rounded-2xl p-6 sm:p-8 space-y-6">
             <div>
               <h3 className="font-display font-semibold text-lg mb-1">თემა</h3>
               <p className="text-sm text-muted-foreground">აირჩიე რა იერსახე გექნებათ აპლიკაციას.</p>
@@ -239,7 +240,7 @@ const SettingsPage = () => {
         </TabsContent>
 
         <TabsContent value="team" className="mt-6">
-          <div className="bg-card rounded-xl p-6 space-y-4">
+          <div className="bg-card rounded-2xl p-6 sm:p-8 space-y-4">
             <div className="flex items-center gap-2 mb-2">
               <UserPlus className="w-5 h-5 text-muted-foreground" />
               <h3 className="font-display font-semibold text-lg">თანა-ორგანიზატორების მოწვევა</h3>
