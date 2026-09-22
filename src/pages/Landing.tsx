@@ -80,46 +80,45 @@ export default function Landing() {
       </header>
 
       <main>
-        <section className="relative overflow-hidden bg-[#172d2b] pt-20 text-[#f8f5ed]">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_20%,rgba(213,180,93,.18),transparent_28%),radial-gradient(circle_at_85%_65%,rgba(173,74,90,.22),transparent_30%)]" />
-          <div className="relative mx-auto grid min-h-[calc(100vh-5rem)] max-w-[1440px] items-center gap-12 px-5 py-14 sm:px-8 lg:grid-cols-[.82fr_1.18fr] lg:px-12 lg:py-20">
-            <div className="relative z-10 max-w-2xl">
-              <div className="mb-8 flex items-center gap-3 text-[11px] font-bold uppercase tracking-[.24em] text-[#d5b45d]">
-                <span className="h-px w-10 bg-[#d5b45d]" />
+        <section className="relative overflow-hidden bg-[#122522] pt-20 text-[#fbf7ed]">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_8%_18%,rgba(228,200,124,.16),transparent_25%),radial-gradient(circle_at_92%_75%,rgba(141,49,72,.24),transparent_32%)]" />
+          <div className="absolute right-[-8%] top-[12%] text-[18rem] font-black leading-none tracking-[-.12em] text-white/[.025]">MIX</div>
+          <div className="relative mx-auto grid min-h-[calc(100vh-5rem)] max-w-[1440px] items-center gap-12 px-5 py-12 sm:px-8 lg:grid-cols-[.9fr_1.1fr] lg:gap-16 lg:px-12 lg:py-16">
+            <div className="relative z-10 max-w-2xl lg:pb-10">
+              <div className="mb-7 inline-flex items-center gap-3 rounded-full border border-[#e4c87c]/30 bg-white/[.04] px-4 py-2 text-[10px] font-bold uppercase tracking-[.22em] text-[#e4c87c]">
+                <span className="h-1.5 w-1.5 rounded-full bg-[#e4c87c] shadow-[0_0_14px_#e4c87c]" />
                 სადღესასწაულო სივრცე · თბილისი
               </div>
-              <h1 className="text-balance text-[clamp(3.4rem,7vw,7.8rem)] font-semibold leading-[.94] tracking-[-.075em]">
-                აქ იწყება
-                <span className="editorial-title block font-medium italic text-[#e4c87c]">თქვენი საღამო</span>
+              <h1 className="text-balance text-[clamp(3.5rem,7vw,7.4rem)] font-semibold leading-[.9] tracking-[-.08em]">
+                საღამო,
+                <span className="editorial-title block font-medium italic text-[#e4c87c]">რომელიც რჩება.</span>
               </h1>
-              <p className="mt-8 max-w-lg text-base leading-8 text-white/65 sm:text-lg">
-                სივრცე, მუსიკა და ატმოსფერო ერთ სცენაზე — MIX HALL-ში თქვენი იდეა ცოცხლდება.
+              <p className="mt-8 max-w-xl text-base leading-8 text-white/65 sm:text-lg">
+                თქვენი იდეა, ჩვენი სივრცე და მუსიკა, რომელიც ყველა სტუმარს ერთ რიტმში აერთიანებს.
               </p>
-              <div className="mt-10 flex flex-wrap gap-4">
-                <Link to="/auth" className="inline-flex items-center gap-3 rounded-full bg-[#e4c87c] px-7 py-4 font-bold text-[#172d2b] transition hover:bg-white">
-                  დაგეგმეთ ღონისძიება <ArrowRight className="h-5 w-5" />
+              <div className="mt-9 flex flex-wrap items-center gap-4">
+                <Link to="/auth" className="group inline-flex items-center gap-3 rounded-full bg-[#e4c87c] px-7 py-4 font-bold text-[#122522] transition hover:-translate-y-0.5 hover:bg-white">
+                  დაგეგმეთ ღონისძიება <ArrowRight className="h-5 w-5 transition group-hover:translate-x-1" />
                 </Link>
-                <a href="#events" className="inline-flex items-center gap-2 rounded-full border border-white/25 px-7 py-4 font-bold text-white transition hover:border-[#e4c87c] hover:text-[#e4c87c]">
-                  ნახეთ ფორმატები
+                <a href="#events" className="inline-flex items-center gap-2 px-3 py-3 font-bold text-white/75 transition hover:text-[#e4c87c]">
+                  ნახეთ ფორმატები <span className="text-lg">↓</span>
                 </a>
               </div>
-              <div className="mt-14 grid max-w-md grid-cols-2 gap-6 border-t border-white/15 pt-6 text-sm text-white/60">
-                <div><strong className="block text-2xl text-white">01</strong>ერთი გუნდი სრულად</div>
-                <div><strong className="block text-2xl text-white">∞</strong>შესაძლებლობა თქვენი სტილისთვის</div>
+              <div className="mt-12 flex flex-wrap gap-x-10 gap-y-4 border-t border-white/15 pt-6 text-sm text-white/55">
+                <div><strong className="mr-2 text-2xl text-white">01</strong>ერთი გუნდი სრულად</div>
+                <div><strong className="mr-2 text-2xl text-white">∞</strong>თქვენი სტილი, თქვენი ღამე</div>
               </div>
             </div>
 
-            <div className="relative min-h-[520px] lg:min-h-[700px]">
-              <div className="absolute inset-0 overflow-hidden rounded-[2.5rem] border border-white/15 bg-[#263e3a] shadow-2xl lg:rotate-2">
-                <img src={providedEventImage} alt="DJ MIX HALL-ის სცენაზე" className="h-full w-full object-cover object-center opacity-90 saturate-[.9]" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#172d2b] via-transparent to-black/10" />
-              </div>
-              <div className="absolute bottom-7 left-5 max-w-[230px] rounded-2xl border border-white/15 bg-[#172d2b]/90 p-5 backdrop-blur-md lg:-left-8">
-                <Music2 className="mb-5 h-6 w-6 text-[#e4c87c]" />
-                <p className="text-lg font-semibold leading-snug">განწყობა, რომელიც პირველივე წუთიდან იგრძნობა.</p>
-              </div>
-              <div className="absolute right-4 top-6 rounded-full border border-[#e4c87c]/50 bg-[#e4c87c] px-4 py-2 text-xs font-bold text-[#172d2b] lg:-right-4">
-                MAKE IT YOUR NIGHT
+            <div className="relative min-h-[480px] lg:min-h-[680px]">
+              <div className="absolute -inset-3 rounded-[2.75rem] border border-[#e4c87c]/20 lg:rotate-3" />
+              <div className="absolute inset-0 overflow-hidden rounded-[2.5rem] border border-white/15 bg-[#263e3a] shadow-[0_30px_90px_rgba(0,0,0,.35)] lg:rotate-[-2deg]">
+                <img src={providedEventImage} alt="DJ MIX HALL-ის სცენაზე" className="h-full w-full object-cover object-center opacity-95 saturate-[.88] transition duration-700 hover:scale-[1.025]" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#122522] via-transparent to-black/10" />
+                <div className="absolute inset-x-0 bottom-0 flex items-end justify-between p-6 sm:p-8">
+                  <div><p className="mb-1 text-[10px] font-bold uppercase tracking-[.22em] text-[#e4c87c]">LIVE ENERGY</p><p className="text-lg font-semibold">შექმენი შენი მომენტი</p></div>
+                  <Music2 className="h-7 w-7 text-[#e4c87c]" />
+                </div>
               </div>
             </div>
           </div>
@@ -214,7 +213,7 @@ export default function Landing() {
                 </h2>
               </div>
               <Link to="/auth" className="inline-flex shrink-0 items-center gap-3 rounded-full bg-[#d5b45d] px-7 py-4 font-bold text-[#25231f] hover:bg-white">
-                დაგვიკავშირდით <ArrowRight className="h-5 w-5" />
+                დაგვიკ��ვშირდით <ArrowRight className="h-5 w-5" />
               </Link>
             </div>
           </div>
