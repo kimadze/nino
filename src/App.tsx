@@ -4,9 +4,11 @@ import { Logo } from "@/components/Logo";
 import Landing from "@/pages/Landing";
 
 const BackendApp = lazy(() => import("@/BackendApp"));
-const backendConfigured = Boolean(
-  import.meta.env.VITE_SUPABASE_URL && import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY,
-);
+  const backendConfigured = Boolean(
+    import.meta.env.VITE_SUPABASE_URL || import.meta.env.NEXT_PUBLIC_SUPABASE_URL,
+  ) && Boolean(
+    import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY || import.meta.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY,
+  );
 
 function SetupState() {
   return (
