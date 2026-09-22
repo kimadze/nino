@@ -120,7 +120,6 @@ export default function Landing() {
                   <Music2 className="h-7 w-7 text-[#e4c87c]" />
                 </div>
               </div>
-              <div className="absolute right-2 top-2 rounded-full border border-[#e4c87c]/50 bg-[#e4c87c] px-4 py-2 text-[10px] font-black tracking-[.16em] text-[#122522] shadow-xl lg:-right-5 lg:top-8">MAKE IT YOUR NIGHT</div>
             </div>
           </div>
         </section>
