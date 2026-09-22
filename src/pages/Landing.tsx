@@ -12,13 +12,16 @@ import {
   X,
 } from "lucide-react";
 import { Logo } from "@/components/Logo";
-const featuredEventImage = "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/813825514_122111973069326157_2053786015877639402_n-SCae0ARkWItTMMCjdD3LASw0EwSs4G.jpg";
+const providedEventImage = "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/813825514_122111973069326157_2053786015877639402_n-SCae0ARkWItTMMCjdD3LASw0EwSs4G.jpg";
+const birthdayImage = "/images/mix-hall-birthday.png";
+const teenPartyImage = "/images/mix-hall-teen-party.png";
+const corporateImage = "/images/mix-hall-corporate.png";
 
 const occasions = [
-  { title: "ბავშვთა დაბადების დღე", label: "ფერადი და დაუვიწყარი", image: featuredEventImage },
-  { title: "თინეიჯერების წვეულება", label: "მუსიკა და ენერგია", image: featuredEventImage },
-  { title: "კორპორაციული საღამო", label: "გუნდის განსაკუთრებული დღე", image: featuredEventImage },
-  { title: "ბოლო ზარი და გამოსაშვები", label: "ახალი ეტაპის აღნიშვნა", image: featuredEventImage },
+  { title: "ბავშვთა დაბადების დღე", label: "ფერადი და დაუვიწყარი", image: birthdayImage },
+  { title: "თინეიჯერების წვეულება", label: "მუსიკა და ენერგია", image: teenPartyImage },
+  { title: "კორპორაციული საღამო", label: "გუნდის განსაკუთრებული დღე", image: corporateImage },
+  { title: "ბოლო ზარი და გამოსაშვები", label: "ახალი ეტაპის აღნიშვნა", image: teenPartyImage },
 ];
 
 const advantages = [
@@ -107,13 +110,13 @@ export default function Landing() {
 
             <div className="relative grid h-[560px] grid-cols-12 grid-rows-12 gap-3 lg:h-[680px]">
               <div className="col-span-8 row-span-9 overflow-hidden rounded-[2rem] bg-[#ded7c7]">
-                <img src={featuredEventImage} alt="MIX HALL-ის ღონისძიების სივრცე" className="h-full w-full object-cover saturate-[.72] sepia-[.12]" />
+                <img src={providedEventImage} alt="MIX HALL-ის ღონისძიების სივრცე" className="h-full w-full object-cover saturate-[.72] sepia-[.12]" />
               </div>
               <div className="col-span-4 col-start-9 row-span-6 row-start-2 overflow-hidden rounded-[2rem] bg-[#ded7c7]">
-                <img src={featuredEventImage} alt="სადღესასწაულო ღონისძიება" className="h-full w-full object-cover saturate-[.72] sepia-[.12]" />
+                <img src={teenPartyImage} alt="სადღესასწაულო ღონისძიება" className="h-full w-full object-cover saturate-[.72] sepia-[.12]" />
               </div>
               <div className="col-span-6 col-start-7 row-span-5 row-start-8 overflow-hidden rounded-[2rem] border-[10px] border-[#f8f5ed] bg-[#ded7c7]">
-                <img src={featuredEventImage} alt="საღამოს ღონისძიება" className="h-full w-full object-cover saturate-[.7] sepia-[.15]" />
+                <img src={corporateImage} alt="საღამოს ღონისძიება" className="h-full w-full object-cover saturate-[.7] sepia-[.15]" />
               </div>
               <div className="absolute -bottom-3 left-5 rounded-2xl bg-[#25231f] px-5 py-4 text-sm text-white shadow-xl">
                 <span className="block text-2xl font-semibold text-[#d5b45d]">ერთი სივრცე</span>
