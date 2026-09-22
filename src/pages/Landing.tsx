@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import {
   ArrowRight,
-  CalendarDays,
   ChevronDown,
   Flower2,
   Menu,
@@ -81,46 +80,46 @@ export default function Landing() {
       </header>
 
       <main>
-        <section className="relative min-h-screen pt-20">
-          <div className="mx-auto grid min-h-[calc(100vh-5rem)] max-w-[1440px] items-center gap-12 px-5 py-16 sm:px-8 lg:grid-cols-[.9fr_1.1fr] lg:px-12 lg:py-20">
-            <div className="relative z-10">
-              <p className="eyebrow mb-7">სადღესასწაულო სივრცე · თბილისი</p>
-              <h1 className="max-w-2xl text-balance text-[clamp(3.2rem,6.2vw,6.8rem)] font-semibold leading-[.98] tracking-[-.065em]">
-                სივრცე თქვენი
-                <span className="editorial-title block font-medium italic text-[#a98227]">განსაკუთრებული</span>
-                დღისთვის
+        <section className="relative overflow-hidden bg-[#172d2b] pt-20 text-[#f8f5ed]">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_20%,rgba(213,180,93,.18),transparent_28%),radial-gradient(circle_at_85%_65%,rgba(173,74,90,.22),transparent_30%)]" />
+          <div className="relative mx-auto grid min-h-[calc(100vh-5rem)] max-w-[1440px] items-center gap-12 px-5 py-14 sm:px-8 lg:grid-cols-[.82fr_1.18fr] lg:px-12 lg:py-20">
+            <div className="relative z-10 max-w-2xl">
+              <div className="mb-8 flex items-center gap-3 text-[11px] font-bold uppercase tracking-[.24em] text-[#d5b45d]">
+                <span className="h-px w-10 bg-[#d5b45d]" />
+                სადღესასწაულო სივრცე · თბილისი
+              </div>
+              <h1 className="text-balance text-[clamp(3.4rem,7vw,7.8rem)] font-semibold leading-[.94] tracking-[-.075em]">
+                აქ იწყება
+                <span className="editorial-title block font-medium italic text-[#e4c87c]">თქვენი საღამო</span>
               </h1>
-              <p className="mt-8 max-w-xl text-base leading-8 text-[#6d675d] sm:text-lg">
-                ელეგანტური გარემო, ყურადღებით დაგეგმილი დეტალები და გუნდი,
-                რომელიც თქვენს იდეას დაუვიწყარ მოვლენად აქცევს.
+              <p className="mt-8 max-w-lg text-base leading-8 text-white/65 sm:text-lg">
+                სივრცე, მუსიკა და ატმოსფერო ერთ სცენაზე — MIX HALL-ში თქვენი იდეა ცოცხლდება.
               </p>
               <div className="mt-10 flex flex-wrap gap-4">
-                <Link to="/auth" className="inline-flex items-center gap-3 rounded-full bg-[#25231f] px-7 py-4 font-bold text-white hover:bg-[#b89435] hover:text-[#25231f]">
-                  დაგეგმეთ თქვენი დღე <ArrowRight className="h-5 w-5" />
+                <Link to="/auth" className="inline-flex items-center gap-3 rounded-full bg-[#e4c87c] px-7 py-4 font-bold text-[#172d2b] transition hover:bg-white">
+                  დაგეგმეთ ღონისძიება <ArrowRight className="h-5 w-5" />
                 </Link>
-                <a href="#events" className="inline-flex items-center gap-2 rounded-full border border-black/15 px-7 py-4 font-bold hover:border-[#b89435] hover:text-[#8f6d1d]">
-                  ღონისძიებების ნახვა
+                <a href="#events" className="inline-flex items-center gap-2 rounded-full border border-white/25 px-7 py-4 font-bold text-white transition hover:border-[#e4c87c] hover:text-[#e4c87c]">
+                  ნახეთ ფორმატები
                 </a>
               </div>
-              <div className="mt-12 flex items-center gap-3 text-sm text-[#6d675d]">
-                <CalendarDays className="h-5 w-5 text-[#a98227]" />
-                ინდივიდუალური დაგეგმვა თითოეული ღონისძიებისთვის
+              <div className="mt-14 grid max-w-md grid-cols-2 gap-6 border-t border-white/15 pt-6 text-sm text-white/60">
+                <div><strong className="block text-2xl text-white">01</strong>ერთი გუნდი სრულად</div>
+                <div><strong className="block text-2xl text-white">∞</strong>შესაძლებლობა თქვენი სტილისთვის</div>
               </div>
             </div>
 
-            <div className="relative grid h-[560px] grid-cols-12 grid-rows-12 gap-3 lg:h-[680px]">
-              <div className="col-span-8 row-span-9 overflow-hidden rounded-[2rem] bg-[#ded7c7]">
-                <img src={providedEventImage} alt="MIX HALL-ის ღონისძიების სივრცე" className="h-full w-full object-cover saturate-[.72] sepia-[.12]" />
+            <div className="relative min-h-[520px] lg:min-h-[700px]">
+              <div className="absolute inset-0 overflow-hidden rounded-[2.5rem] border border-white/15 bg-[#263e3a] shadow-2xl lg:rotate-2">
+                <img src={providedEventImage} alt="DJ MIX HALL-ის სცენაზე" className="h-full w-full object-cover object-center opacity-90 saturate-[.9]" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#172d2b] via-transparent to-black/10" />
               </div>
-              <div className="col-span-4 col-start-9 row-span-6 row-start-2 overflow-hidden rounded-[2rem] bg-[#ded7c7]">
-                <img src={teenPartyImage} alt="სადღესასწაულო ღონისძიება" className="h-full w-full object-cover saturate-[.72] sepia-[.12]" />
+              <div className="absolute bottom-7 left-5 max-w-[230px] rounded-2xl border border-white/15 bg-[#172d2b]/90 p-5 backdrop-blur-md lg:-left-8">
+                <Music2 className="mb-5 h-6 w-6 text-[#e4c87c]" />
+                <p className="text-lg font-semibold leading-snug">განწყობა, რომელიც პირველივე წუთიდან იგრძნობა.</p>
               </div>
-              <div className="col-span-6 col-start-7 row-span-5 row-start-8 overflow-hidden rounded-[2rem] border-[10px] border-[#f8f5ed] bg-[#ded7c7]">
-                <img src={corporateImage} alt="საღამოს ღონისძიება" className="h-full w-full object-cover saturate-[.7] sepia-[.15]" />
-              </div>
-              <div className="absolute -bottom-3 left-5 rounded-2xl bg-[#25231f] px-5 py-4 text-sm text-white shadow-xl">
-                <span className="block text-2xl font-semibold text-[#d5b45d]">ერთი სივრცე</span>
-                ბევრი მნიშვნელოვანი მოგონებისთვის
+              <div className="absolute right-4 top-6 rounded-full border border-[#e4c87c]/50 bg-[#e4c87c] px-4 py-2 text-xs font-bold text-[#172d2b] lg:-right-4">
+                MAKE IT YOUR NIGHT
               </div>
             </div>
           </div>
